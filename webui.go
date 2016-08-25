@@ -374,16 +374,16 @@ func writeMainGraphs(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, importsStr)
 	io.WriteString(w, mainBodyStr)
 	io.WriteString(w, addDimpleChart("prices", "Ticket Prices",
-		filepath.Join(csvPath, csvTicketPricesFn), "Height", "Price", "Type",
+		filepath.Join("webui/", csvTicketPricesFn), "Height", "Price", "Type",
 		height-chartCutoffTicketPrice, false))
 	io.WriteString(w, addDimpleChart("mempool", "Tickets in Mempool",
-		filepath.Join(csvPath, csvMempoolFn), "Height", "Number", "Type",
+		filepath.Join("webui/", csvMempoolFn), "Height", "Number", "Type",
 		height-chartCutoffMempool, false))
 	io.WriteString(w, addDimpleChart("purchased", "Tickets Purchased",
-		filepath.Join(csvPath, csvPurchasedFn), "Height", "Number", "Type",
+		filepath.Join("webui/", csvPurchasedFn), "Height", "Number", "Type",
 		height-chartCutoffPurchased, true))
 	io.WriteString(w, addDimpleChart("fees", "Ticket Fees",
-		filepath.Join(csvPath, csvFeesFn), "Height", "FeesPerKB", "Type",
+		filepath.Join("webui/", csvFeesFn), "Height", "FeesPerKB", "Type",
 		height-chartCutoffFees, false))
 	io.WriteString(w, mainFooterStr)
 }
